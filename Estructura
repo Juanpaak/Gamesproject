@@ -1,0 +1,5 @@
+webtoon-videojuegos/
+│
+├── index.html
+├── styles.css
+└── img/         (una carpeta para tus imágenes)
