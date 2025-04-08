@@ -54,3 +54,37 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
+
+.carrusel {
+  padding: 2rem;
+  text-align: center;
+  background-color: #1a1a1a;
+  margin: 2rem 0;
+}
+
+.contenedor-carrusel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+
+.contenedor-carrusel::-webkit-scrollbar {
+  display: none; 
+}
+
+.contenedor-carrusel img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  flex: 0 0 auto; 
+}
+
+.contenedor-carrusel img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(10, 175, 255, 0.6);
+}
