@@ -1,5 +1,11 @@
 webtoon-videojuegos/
 │
-├── index.html
-├── styles.css
-└── img/         (una carpeta para tus imágenes)
+├── index.html          
+├── styles.css         
+└── img/
+    ├── serie1.jpg      
+    ├── serie2.jpg
+    ├── trend1.jpg     
+    ├── trend2.jpg
+    ├── trend3.jpg
+    └── trend4.jpg
