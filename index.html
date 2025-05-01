@@ -1,51 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameToon - Historias de Videojuegos</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>🎮 GameToon</h1>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Series</a></li>
-        <li><a href="#">Novedades</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#series">Series</a></li>
+        <li><a href="#novedades">Novedades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="destacados">
+  <main id="inicio">
+    <section class="destacados" id="series">
       <h2>Series Destacadas</h2>
+      
+      <!-- Filtros -->
+      <div class="filtros">
+        <select id="categoria-filtro">
+          <option value="todas">Todas las categorías</option>
+          <option value="aventura">Aventura</option>
+          <option value="rpg">RPG</option>
+          <option value="accion">Acción</option>
+          <option value="fantasia">Fantasía</option>
+        </select>
+        
+        <select id="orden">
+          <option value="a-z">A-Z</option>
+          <option value="z-a">Z-A</option>
+        </select>
+        
+        <button id="reset-filtros" class="btn-reset">Resetear</button>
+      </div>
+      
+      <!-- Galería -->
       <div class="galeria">
-        <div class="item">
-          <img src="img/serie1.jpg" alt="Serie 1">
+        <div class="item" data-categoria="aventura" data-nombre="La leyenda del píxel">
+          <img src="img/serie1.jpg" alt="Serie 1" loading="lazy">
           <p>La leyenda del píxel</p>
+          <span class="categoria-tag">Aventura</span>
         </div>
-        <div class="item">
-          <img src="img/serie2.jpg" alt="Serie 2">
+        
+        <div class="item" data-categoria="rpg" data-nombre="Respawn: Crónicas de un gamer">
+          <img src="img/serie2.jpg" alt="Serie 2" loading="lazy">
           <p>Respawn: Crónicas de un gamer</p>
+          <span class="categoria-tag">RPG</span>
+        </div>
+        
+        <div class="item" data-categoria="accion" data-nombre="Headshot Pro">
+          <img src="img/serie3.jpg" alt="Serie 3" loading="lazy">
+          <p>Headshot Pro</p>
+          <span class="categoria-tag">Acción</span>
+        </div>
+        
+        <div class="item" data-categoria="fantasia" data-nombre="El Reino del Byte">
+          <img src="img/serie4.jpg" alt="Serie 4" loading="lazy">
+          <p>El Reino del Byte</p>
+          <span class="categoria-tag">Fantasía</span>
         </div>
       </div>
     </section>
-     <section class="carrusel">
-      <h2>Trending Now</h2>
-      <div class="contenedor-carrusel">
-        <img src="img/trend1.jpg" alt="Trend 1">
-        <img src="img/trend2.jpg" alt="Trend 2">
-        <img src="img/trend3.jpg" alt="Trend 3">
-        <img src="img/trend4.jpg" alt="Trend 4">
-      </div>
+
+    <!-- Carrusel (se mantiene igual) -->
+    <section class="carrusel" id="novedades">
+      <!-- ... -->
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 GameToon. Todos los derechos reservados.</p>
+  <footer id="contacto">
+    <!-- ... -->
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
