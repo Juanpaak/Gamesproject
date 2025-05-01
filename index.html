@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameToon - Historias de Videojuegos</title>
+  <title>GameToon - Webtoons de Videojuegos</title>
+  <!--CSS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,65 +22,64 @@
   </header>
 
   <main id="inicio">
+    <!-- Sección con Filtros -->
     <section class="destacados" id="series">
       <h2>Series Destacadas</h2>
-      
-      <!-- Filtros -->
       <div class="filtros">
         <select id="categoria-filtro">
           <option value="todas">Todas las categorías</option>
           <option value="aventura">Aventura</option>
           <option value="rpg">RPG</option>
           <option value="accion">Acción</option>
-          <option value="fantasia">Fantasía</option>
         </select>
-        
         <select id="orden">
           <option value="a-z">A-Z</option>
           <option value="z-a">Z-A</option>
         </select>
-        
-        <button id="reset-filtros" class="btn-reset">Resetear</button>
+        <button id="reset-filtros" class="btn-reset">
+          <i class="fas fa-sync-alt"></i> Resetear
+        </button>
       </div>
-      
-      <!-- Galería -->
       <div class="galeria">
         <div class="item" data-categoria="aventura" data-nombre="La leyenda del píxel">
           <img src="img/serie1.jpg" alt="Serie 1" loading="lazy">
           <p>La leyenda del píxel</p>
           <span class="categoria-tag">Aventura</span>
         </div>
-        
         <div class="item" data-categoria="rpg" data-nombre="Respawn: Crónicas de un gamer">
           <img src="img/serie2.jpg" alt="Serie 2" loading="lazy">
           <p>Respawn: Crónicas de un gamer</p>
           <span class="categoria-tag">RPG</span>
         </div>
-        
-        <div class="item" data-categoria="accion" data-nombre="Headshot Pro">
-          <img src="img/serie3.jpg" alt="Serie 3" loading="lazy">
-          <p>Headshot Pro</p>
-          <span class="categoria-tag">Acción</span>
-        </div>
-        
-        <div class="item" data-categoria="fantasia" data-nombre="El Reino del Byte">
-          <img src="img/serie4.jpg" alt="Serie 4" loading="lazy">
-          <p>El Reino del Byte</p>
-          <span class="categoria-tag">Fantasía</span>
-        </div>
+        <!-- Más items -->
       </div>
     </section>
 
-    <!-- Carrusel (se mantiene igual) -->
+    <!-- Carrusel -->
     <section class="carrusel" id="novedades">
-      <!-- ... -->
+      <h2>Trending Now</h2>
+      <div class="contenedor-carrusel">
+        <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="imagenes-carrusel">
+          <img src="img/trend1.jpg" alt="Trend 1" loading="lazy">
+          <img src="img/trend2.jpg" alt="Trend 2" loading="lazy">
+          <img src="img/trend3.jpg" alt="Trend 3" loading="lazy">
+        </div>
+        <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
     </section>
   </main>
 
   <footer id="contacto">
-    <!-- ... -->
+    <div class="redes-sociales">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 GameToon. Todos los derechos reservados.</p>
   </footer>
 
+  <!--JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
