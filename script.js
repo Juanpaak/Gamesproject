@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Elementos del DOM
+  // ===== FILTRADO Y ORDENAMIENTO =====
   const categoriaFiltro = document.getElementById('categoria-filtro');
   const ordenSelect = document.getElementById('orden');
   const btnReset = document.getElementById('reset-filtros');
   const galeria = document.querySelector('.galeria');
   const items = Array.from(document.querySelectorAll('.item'));
 
-  // Función principal
   function filtrarYOrdenar() {
     const categoria = categoriaFiltro.value;
     const orden = ordenSelect.value;
 
-    // 1. Filtrar
+    // 1. Filtrar por categoría
     items.forEach(item => {
       const itemCategoria = item.getAttribute('data-categoria');
       if (categoria === 'todas' || itemCategoria === categoria) {
@@ -34,22 +33,54 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Reordenar en el DOM con animación
     setTimeout(() => {
       itemsVisibles.forEach(item => galeria.appendChild(item));
-    }, 300); // Espera a que termine la transición CSS
+    }, 300);
   }
 
-  // Event Listeners
+  // Eventos
   categoriaFiltro.addEventListener('change', filtrarYOrdenar);
   ordenSelect.addEventListener('change', filtrarYOrdenar);
-  
   btnReset.addEventListener('click', () => {
     categoriaFiltro.value = 'todas';
     ordenSelect.value = 'a-z';
     filtrarYOrdenar();
   });
 
+  // ===== CARRUSEL INTERACTIVO =====
+  const carrusel = document.querySelector('.imagenes-carrusel');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const imgWidth = document.querySelector('.imagenes-carrusel img').offsetWidth;
+  const gap = 24; // 1.5rem en px
+
+  nextBtn.addEventListener('click', () => {
+    carrusel.scrollBy({ left: imgWidth + gap, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carrusel.scrollBy({ left: -(imgWidth + gap), behavior: 'smooth' });
+  });
+
+  // Auto-desplazamiento
+  let intervalId = setInterval(() => {
+    if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
+      carrusel.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      carrusel.scrollBy({ left: imgWidth + gap, behavior: 'smooth' });
+    }
+  }, 5000);
+
+  // Pausar hover
+  carrusel.addEventListener('mouseenter', () => clearInterval(intervalId));
+  carrusel.addEventListener('mouseleave', () => {
+    intervalId = setInterval(() => {
+      if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
+        carrusel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        carrusel.scrollBy({ left: imgWidth + gap, behavior: 'smooth' });
+      }
+    }, 5000);
+  });
+
   // Inicializar
   filtrarYOrdenar();
-
-  // Carrusel (código previo)
-  // ...
 });
