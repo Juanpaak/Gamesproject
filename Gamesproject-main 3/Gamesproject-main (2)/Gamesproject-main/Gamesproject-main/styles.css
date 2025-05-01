@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+}
+
+header {
+  background-color: #222;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: #0af;
+  text-decoration: none;
+}
+
+.destacados {
+  padding: 2rem;
+  text-align: center;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #222;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.carrusel {
+  padding: 2rem;
+  text-align: center;
+  background-color: #1a1a1a;
+  margin: 2rem 0;
+}
+
+.contenedor-carrusel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+
+.contenedor-carrusel::-webkit-scrollbar {
+  display: none; 
+}
+
+.contenedor-carrusel img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  flex: 0 0 auto; 
+}
+
+.contenedor-carrusel img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(10, 175, 255, 0.6);
+}

@@ -1,0 +1,92 @@
+/* CARD - Naruto y Boruto */
+.card {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.img-boruto {
+  opacity: 0;
+}
+
+.card:hover .img-boruto {
+  opacity: 1;
+}
+
+.card:hover .img-naruto {
+  opacity: 0;
+}
+
+
+/* DIGITAL - Death Note */
+.digital {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.digital img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.img-deahtnote {
+  opacity: 0;
+}
+
+.digital:hover .img-deahtnote {
+  opacity: 1;
+}
+
+.digital:hover .img-boruto {
+  opacity: 0;
+}
+
+
+/* LANG - Goku y Kakaroto */
+.lang {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.lang img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.img-kakaroto {
+  opacity: 1;
+}
+
+.koku {
+  opacity: 0;
+}
+
+.lang:hover .img-kakaroto {
+  opacity: 0;
+}
+
+.lang:hover .koku {
+  opacity: 1;
+}
